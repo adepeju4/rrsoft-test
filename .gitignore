@@ -9,6 +9,9 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# existing entries...
+package-lock.json
+
 # Dependency directories
 node_modules/
 dist
