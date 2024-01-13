@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import baseUrl from "../utils/baseUrl";
 
 const useFetch = <T>(url: string, body: T) => {
   const [data, setData] = useState(null);
@@ -6,7 +7,7 @@ const useFetch = <T>(url: string, body: T) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch(url, {
+    fetch(baseUrl + url, {
       method: data ? "POST" : "GET",
       credentials: "include",
       headers: {

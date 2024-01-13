@@ -1,39 +1,34 @@
 import { store } from "./lib/store";
 import { StoreProvider } from "easy-peasy";
-import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import { ChakraProvider } from "@chakra-ui/react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
+import ArticleList from "./pages/ArticleList";
+import CreateArticle from "./pages/createArticle";
+import Error404 from "./pages/404";
+import themeConfig from "./lib/themeConfig";
 
 function App() {
-  const theme = extendTheme({
-    colors: {
-      gray: {
-        100: "#f5f5f5",
-        200: "#eeeeee",
-        300: "#e0e0e0",
-        400: "#bdbdbd",
-        500: "#9e9e9e",
-        600: "#757575",
-        700: "#616161",
-        800: "#424242",
-        900: "#212121",
-      },
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <ArticleList />,
     },
-    components: {
-      Button: {
-        variants: {
-          link: {
-            ":focus": {
-              outline: "none",
-              boxShadow: "none",
-            },
-          },
-        },
-      },
+    {
+      path: "/create",
+      element: <CreateArticle />,
     },
-  });
+    {
+      path: "/*",
+      element: <Error404 />,
+    },
+  ]);
+
   return (
-    <ChakraProvider theme={theme}>
-      <StoreProvider store={store}></StoreProvider>
+    <ChakraProvider theme={themeConfig}>
+      <StoreProvider store={store}>
+        <RouterProvider router={router} />
+      </StoreProvider>
     </ChakraProvider>
   );
 }
