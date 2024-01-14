@@ -1,5 +1,7 @@
+import Articles from "../Components/ArticleList/Articles";
+
 function ArticleList() {
-  return <div>ArticleList</div>;
+  return <Articles />;
 }
 
 export default ArticleList;
