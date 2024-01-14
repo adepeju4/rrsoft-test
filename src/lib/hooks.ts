@@ -45,7 +45,6 @@ const useFetch = <T>(url: string) => {
         setError(err.message);
         setIsPending(false);
       });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [url]);
 
   return { data, isPending, error };

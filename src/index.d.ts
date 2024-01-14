@@ -11,13 +11,6 @@ export interface IArticle {
   userId: string;
 }
 
-export interface IComment {
-  id: number;
-  body: string;
-  userId: number;
-  articleId: number;
-  postedDate: Date;
-}
 
 export interface IUser {
   id: number;
