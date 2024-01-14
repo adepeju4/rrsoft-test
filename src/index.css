@@ -8,9 +8,24 @@ base styles
 *::before {
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
   box-sizing: border-box;
   font-family: "Quicksand";
 }
 
+body {
 
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+      -ms-overflow-style: none;
+    scrollbar-width: none;
+}
 
+body::-webkit-scrollbar{
+    display: none;
+}
+
+.fixedHeightForm {
+  height: 90%;
+  width: 100%;
+}

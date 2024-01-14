@@ -4,7 +4,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 import ArticleList from "./pages/ArticleList";
-import CreateArticle from "./pages/createArticle";
+import CreateArticle from "./pages/CreateArticle";
 import Error404 from "./pages/404";
 import themeConfig from "./lib/themeConfig";
 
